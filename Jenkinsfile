@@ -1,3 +1,6 @@
+
+@Library('my-shared-library') _
+
 pipeline{
 
     agent any
@@ -5,13 +8,14 @@ pipeline{
 
         stages{
 
-            stage('git checkout'){
-
-                steps{
-
-                    script{
-
-                        git branch: 'main', url:"https://github.com/will-chrizt/springboot_java_application.git"
-        }
-    }
-}}}
+            stage('Git Checkout'){
+                   
+            steps{
+            gitCheckout(
+                branch: "main",
+                url: "https://github.com/vikash-kumar01/mrdevops_java_app.git"
+            )
+            }
+}
+}
+}
