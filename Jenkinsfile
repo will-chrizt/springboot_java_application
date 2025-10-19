@@ -45,7 +45,8 @@ pipeline{
                 when{expression { params.action == 'create' }}
                 steps{
                     script{
-                        statiCodeAnalysis()
+                        def ZSonarQubecredentialId = 'sonarqube-server'
+                        statiCodeAnalysis(ZSonarQubecredentialId)
 
                     }
                 }
