@@ -9,12 +9,13 @@ pipeline{
 
         choice(name: 'action' , choices: 'create\ndelete', description: 'choose action to perform')
     }
-        when{expression { params.action == 'create' }}
+        
 
             
         stages{
 
             stage('Git Checkout'){
+                when{expression { params.action == 'create' }}
                    
             steps{
             gitCheckout(
@@ -24,6 +25,7 @@ pipeline{
             }
             }
             stage('unit test maven'){
+                when{expression { params.action == 'create' }}
                 steps{
                    script{
                        mvnTest()
@@ -31,6 +33,7 @@ pipeline{
             }
             }
             stage('mvn integration test'){
+                when{expression { params.action == 'create' }}
                 steps{
                     script{
                         mvnIntegrationTest()
