@@ -20,7 +20,7 @@ pipeline{
         stage('unit test maven'){
             steps{
                script{
-                   mvnTEST()
+                   mvnTest()
                }       
             }
         }    
