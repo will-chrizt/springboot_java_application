@@ -32,6 +32,7 @@ pipeline{
                 when{expression { params.action == 'create' }}
                 steps{
                    script{
+                    withMaven(maven: 'Maven 3.10.1', jdk: 'Java 17')
                        mvnTest()
                }       
             }
@@ -39,6 +40,7 @@ pipeline{
             stage('mvn integration test'){
                 when{expression { params.action == 'create' }}
                 steps{
+                    withMaven(maven: 'Maven 3.10.1', jdk: 'Java 17')
                     script{
                         mvnIntegrationTest()
                     }
@@ -49,6 +51,7 @@ pipeline{
                 when{expression { params.action == 'create' }}
                 steps{
                     script{
+                        withMaven(maven: 'Maven 3.10.1', jdk: 'Java 17')
                         def ZSonarQubecredentialId = 'sonarqube-server'
                         statiCodeAnalysis(ZSonarQubecredentialId)
 
