@@ -4,6 +4,10 @@
 pipeline{
 
     agent any
+    environment {
+    MAVEN_OPTS = '--add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED'
+}
+
     
     parameters{
 
