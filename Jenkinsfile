@@ -1,8 +1,7 @@
 pipeline{
 
-    agent{
+    agent any
 
-        any
 
         stages{
 
@@ -15,4 +14,4 @@ pipeline{
                         git branch: 'main', url:"https://github.com/will-chrizt/springboot_java_applicatioion.git"
         }
     }
-}}}}
+}}}
