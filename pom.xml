@@ -22,6 +22,10 @@
     <description>Demo project for Spring Cloud Kubernetes</description>
 
     <properties>
+           <sonar.projectKey>springboot_app</sonar.projectKey>
+    <sonar.projectName>Spring Boot Application</sonar.projectName>
+    <sonar.projectVersion>1.0</sonar.projectVersion>
+    <sonar.sourceEncoding>UTF-8</sonar.sourceEncoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>17</java.version>
@@ -85,6 +89,12 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.1.2</version>
             </plugin>
+
+             <plugin>
+              <groupId>org.sonarsource.scanner.maven</groupId>
+              <artifactId>sonar-maven-plugin</artifactId>
+              <version>3.9.1.2184</version>
+          </plugin>
 
             <!-- Maven Compiler Plugin for Java 17 -->
             <plugin>
