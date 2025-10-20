@@ -34,6 +34,19 @@
     <maven.compiler.release>17</maven.compiler.release>
         <maven.compiler.plugin.version>3.10.1</maven.compiler.plugin.version>
     </properties>
+    
+    <dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-dependencies</artifactId>
+            <version>2022.0.4</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>
+</dependencyManagement>
+
 
     <dependencies>
         <!-- Spring Boot Web -->
@@ -49,11 +62,12 @@
         </dependency>
 
         <!-- Spring Cloud Kubernetes Config -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-kubernetes-config</artifactId>
-            <version>3.1.0</version>
-        </dependency>
+       <dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-kubernetes-client-config</artifactId>
+    <version>3.1.0</version>
+</dependency>
+
 
         <!-- Lombok -->
         <dependency>
