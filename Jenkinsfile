@@ -52,6 +52,19 @@ pipeline{
                     }
                 }
             }
+
+            stage('Quality Gate  Status Check : sonarqube'){
+                when{expression { params.action == 'create' }}
+                steps{
+                    script{
+                        def ZSonarQubecredentialId = 'sonar-serverr'
+                        statiCodeAnalysis(ZSonarQubecredentialId)
+
+                    }
+                }
+            }
+
+            
         }
 }
 
