@@ -49,7 +49,7 @@ pipeline{
                 when{expression { params.action == 'create' }}
                 steps{
                     script{
-                        def ZSonarQubecredentialId = 'server1'
+                        def ZSonarQubecredentialId = 'server2'
                         statiCodeAnalysis(ZSonarQubecredentialId)
 
                     }
@@ -60,7 +60,7 @@ pipeline{
                 when{expression { params.action == 'create' }}
                 steps{
                     script{
-                        def ZSonarQubecredentialId = 'server1'
+                        def ZSonarQubecredentialId = 'server2'
                         statiCodeAnalysis(ZSonarQubecredentialId)
 
                     }
