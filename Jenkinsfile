@@ -45,27 +45,27 @@ pipeline{
                 }
             }
 
-            // stage('static code analysis: sonarqube'){
-            //     when{expression { params.action == 'create' }}
-            //     steps{
-            //         script{
-            //             def ZSonarQubecredentialId = 'server2'
-            //             statiCodeAnalysis(ZSonarQubecredentialId)
+            stage('static code analysis: sonarqube'){
+                when{expression { params.action == 'create' }}
+                steps{
+                    script{
+                        def ZSonarQubecredentialId = 'server2'
+                        statiCodeAnalysis(ZSonarQubecredentialId)
 
-            //         }
-            //     }
-            // }
+                    }
+                }
+            }
 
-            // stage('Quality Gate  Status Check : sonarqube'){
-            //     when{expression { params.action == 'create' }}
-            //     steps{
-            //         script{
-            //             def ZSonarQubecredentialId = 'server2'
-            //             statiCodeAnalysis(ZSonarQubecredentialId)
+            stage('Quality Gate  Status Check : sonarqube'){
+                when{expression { params.action == 'create' }}
+                steps{
+                    script{
+                        def ZSonarQubecredentialId = 'server2'
+                        statiCodeAnalysis(ZSonarQubecredentialId)
 
-            //         }
-            //     }
-            // }
+                    }
+                }
+            }
 
             stage('Maven Build : maven'){
                 when{expression { params.action == 'create' }}
