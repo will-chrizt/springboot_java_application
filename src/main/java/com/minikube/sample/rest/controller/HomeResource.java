@@ -33,6 +33,7 @@ public class HomeResource {
         responseData.setId(1);
         responseData.setName(config.getName());
         responseData.setPlace("Hyderabad");
+        responseData.setEnvironment(environment);
         responseData.setValue(config.getTest());
         return new ResponseEntity<>(responseData, HttpStatus.OK);
     }
@@ -44,6 +45,7 @@ public class HomeResource {
         private Integer id;
         private String place;
         private String value;
-        private String value;
+        private String environment;
+
     }
 }
