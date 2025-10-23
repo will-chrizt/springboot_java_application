@@ -24,6 +24,9 @@ public class HomeResource {
 	@Autowired
 	PropertiesConfig config;
 
+    @Value("${EVN_DEPLOYED:local}")
+	private String environment;
+
     @GetMapping("/data")
     public ResponseEntity<ResponseData> getData() {
         ResponseData responseData = new ResponseData();
@@ -40,6 +43,7 @@ public class HomeResource {
         private String name;
         private Integer id;
         private String place;
+        private String value;
         private String value;
     }
 }
